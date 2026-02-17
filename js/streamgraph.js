@@ -20,7 +20,7 @@ const drawStreamGraph = (data) => {
   const bottomAxis = d3.axisBottom(xScale)
     .tickValues(d3.range(1975, 2020, 5))
     .tickSizeOuter(0)
-    .tickSize(innerHeight * -1); // Use the axis' ticks to draw a grid behind the streamgraph
+    .tickSize(innerHeight * -1);
   innerChart
     .append("g")
       .attr("class", "x-axis-streamgraph")
@@ -44,7 +44,6 @@ const drawStreamGraph = (data) => {
   /************************************/
   /*    Declare the vertical scale    */
   /************************************/
-  // Find the lower and upper boundary of the domain based on the annotated data
   const minLowerBoundaries = [];
   const maxUpperBoundaries = [];
   annotatedData.forEach(series => {
@@ -54,7 +53,6 @@ const drawStreamGraph = (data) => {
   const minDomain = d3.min(minLowerBoundaries);
   const maxDomain = d3.max(maxUpperBoundaries);
 
-  // Declare the vertical scale
   const yScale = d3.scaleLinear()
     .domain([minDomain, maxDomain])
     .range([innerHeight, 0])
@@ -119,6 +117,4 @@ const drawStreamGraph = (data) => {
       .attr("dy", 20)
       .attr("fill-opacity", 0.7)
       .style("font-size", "14px");
-
-  
 };
