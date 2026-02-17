@@ -10,7 +10,6 @@ const drawStackedBars = (data) => {
     .append("g")
     .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
-  // Explicit key order (this matters)
   const keys = [
     "cd",
     "vinyl",
@@ -21,7 +20,6 @@ const drawStackedBars = (data) => {
     "other"
   ];
 
-  // Make sure all missing values are zero
   data.forEach(d => {
     keys.forEach(k => {
       if (!d[k] || isNaN(d[k])) {
