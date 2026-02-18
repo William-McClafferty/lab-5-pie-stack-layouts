@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Film Industry Revenue by Genre</title>
+  <link rel="stylesheet" type="text/css" href="css/base.css" />
+  <link rel="stylesheet" type="text/css" href="css/visualization.css" />
+</head>
+
+<body>
+  <div class="container">
+    <h1>History of Sales in Film Industry</h1>
+
+    <div id="film-streamgraph"></div>
+    <div id="film-bars"></div>
+    <div class="film-legend-container"></div>
+  </div>
+
+  <!-- D3 must load first -->
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+
+  <!-- Shared constants must load before film-scales -->
+  <script src="js/shared-constants.js"></script>
+
+  <!-- Film scripts -->
+  <script src="js/film-scales.js"></script>
+  <script src="js/film-streamgraph.js"></script>
+  <script src="js/film-stacked-bars.js"></script>
+  <script src="js/film-legend.js"></script>
+  <script src="js/load-film-data.js"></script>
+</body>
+</html>
